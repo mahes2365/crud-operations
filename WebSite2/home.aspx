@@ -23,7 +23,7 @@
             </section>
             <section class="content-container">
                 <article>
-                    <h3>Welcome</h3>
+                    <h2>Welcome</h2>
                     <p>Here you can perform</p>
                 </article>
                 <section class="thumb-img">
