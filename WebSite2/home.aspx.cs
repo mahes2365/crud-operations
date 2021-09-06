@@ -19,7 +19,7 @@ public partial class home : System.Web.UI.Page
     query obj = new query();
     protected void Page_Load(object sender, EventArgs e)
     {
-        BindData();
+        
     }
     protected void rbtmale_CheckedChanged(object sender, EventArgs e)
     {
@@ -97,9 +97,7 @@ public partial class home : System.Web.UI.Page
     protected void btselectall_Click(object sender, EventArgs e)
     {
         
-            DataSet ds = obj.showData("select * from temp_emp_data");
-            GridView1.DataSource = ds.Tables[0];
-            GridView1.DataBind();
+          BindData();
         
     }
     protected void BindData()
