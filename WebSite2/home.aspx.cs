@@ -19,7 +19,7 @@ public partial class home : System.Web.UI.Page
     query obj = new query();
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        BindData();
     }
     protected void rbtmale_CheckedChanged(object sender, EventArgs e)
     {
@@ -96,11 +96,23 @@ public partial class home : System.Web.UI.Page
 
     protected void btselectall_Click(object sender, EventArgs e)
     {
+        
+            DataSet ds = obj.showData("select * from temp_emp_data");
+            GridView1.DataSource = ds.Tables[0];
+            GridView1.DataBind();
+        
+    }
+    protected void BindData()
+    {
         DataSet ds = obj.showData("select * from temp_emp_data");
-        GridView1.DataSource = ds.Tables[0];
+        GridView1.DataSource = ds;
         GridView1.DataBind();
     }
-
+    protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        GridView1.PageIndex = e.NewPageIndex;
+        BindData();
+    }
     protected void btdelete_Click(object sender, EventArgs e)
     {
         empid = txtbxempid5.Text;
@@ -145,18 +157,6 @@ public partial class home : System.Web.UI.Page
 
         if (value)
         {
-            Response.Write("<script>alert('Invalid ID')</script>");
-            txtbxempname2.Text = "";
-            txtbxempid3.Text = "";
-            txtbxempdesign2.Text = "";
-            txtbxempdoj2.Text = "";
-            txtbxempage2.Text = "";
-            rbtfemale2.Checked = false;
-            rbtmale2.Checked = false;
-            rbtothers2.Checked = false;
-        }
-        else
-        {
             obj.DML("update temp_emp_data set emp_id='" + empid + "',emp_name='" + empname + "',emp_gender='" + sex + "',emp_age=" + age + ",emp_designation='" + designation + "',emp_doj='" + doj + "' where emp_id='" + empid2 + "'");
             Response.Write("<script>alert('The Employee Data Updated Successfully')</script>");
             txtbxempname2.Text = "";
@@ -167,9 +167,22 @@ public partial class home : System.Web.UI.Page
             rbtfemale2.Checked = false;
             rbtmale2.Checked = false;
             rbtothers2.Checked = false;
+            txtbxempid4.Text = "";
         }
-        //obj.update("Update temp_emp_data set emp_name=@emp_name,emp_gender=@emp_gender,emp_age=@emp_age,emp_designation=@emp_designation,emp_doj=@emp_doj where emp_id=@emp_id", empname, sex, age, designation, doj, empid2);
+        else
+        {
+            Response.Write("<script>alert('Invalid ID')</script>");
+            txtbxempname2.Text = "";
+            txtbxempid3.Text = "";
+            txtbxempdesign2.Text = "";
+            txtbxempdoj2.Text = "";
+            txtbxempage2.Text = "";
+            rbtfemale2.Checked = false;
+            rbtmale2.Checked = false;
+            rbtothers2.Checked = false;
+            txtbxempid4.Text = "";
+
+        }
     }
 
-    
 }

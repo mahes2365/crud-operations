@@ -394,7 +394,7 @@ a{
     background-color:rgba(227,226,226);
 }
 
-.updatefield #btupdate:active{
+.selectform #btselectall:active{
     box-shadow:inset -4px 4px 10px rgba(10,15,20,0.3),inset -4px 4px rgba(0,0,0,0.2);
 }
 .updateform {
