@@ -437,7 +437,7 @@
                                 <asp:TextBox ID="txtbxempid5" runat="server" Height="30px" Width="230px"></asp:TextBox>
                             </td>
                             <td class="auto-style1">
-                                <asp:Button ID="btdelete" runat="server" Font-Bold="True" ForeColor="Lime" Text="Remove" OnClick="btdelete_Click" Height="35px" Width="90px" />
+                                <asp:Button ID="btdelete" runat="server" Font-Bold="True" ForeColor="Lime" Text="Remove" OnClick="btdelete_Click" Height="35px" Width="90px" ValidationGroup="delete-form" />
                             </td>
                         </tr>
                         <tr>
