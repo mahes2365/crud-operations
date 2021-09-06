@@ -14,6 +14,7 @@ namespace crud {
             string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
             SqlCommand cmd = new SqlCommand(dml_qury, con);
+            
             try
             {
                 con.Open();
@@ -30,6 +31,33 @@ namespace crud {
                 con.Dispose();
             }
         }
+        //public void update(string dml_qury,string name,string gender,string age,string des,string doj,string id)
+        //{
+        //    string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
+        //    SqlConnection con = new SqlConnection(constr);
+        //    SqlCommand cmd = new SqlCommand(dml_qury, con);
+        //    cmd.Parameters.AddWithValue("@emp_name", name);
+        //    cmd.Parameters.AddWithValue("@emp_gender", gender);
+        //    cmd.Parameters.AddWithValue("@emp_age", age);
+        //    cmd.Parameters.AddWithValue("@emp_designation", des);
+        //    cmd.Parameters.AddWithValue("@emp_doj", doj);
+        //    cmd.Parameters.AddWithValue("@emp_id", id);
+        //    try
+        //    {
+        //        con.Open();
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //    catch (Exception err)
+        //    {
+        //        throw err;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //        cmd.Dispose();
+        //        con.Dispose();
+        //    }
+        //}
         public bool getData(string rd)
         {
             string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;

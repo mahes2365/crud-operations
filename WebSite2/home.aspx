@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>CRUD Operations</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="home.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style type="text/css">
         .auto-style1 {
@@ -30,6 +30,13 @@
         .auto-style7 {
             width: 290px;
             height: 50px;
+        }
+        .auto-style8 {
+            height: 50px;
+            width: 96px;
+        }
+        .auto-style9 {
+            width: 96px;
         }
         </style>
 </head>
@@ -264,7 +271,154 @@
     </section>
        <%--    update form section --%>
     <section id="update" class="update">
-        
+        <article>
+            <div class="updateform-container">
+                    <div class="updateform">
+                        <table style="width:80%;">
+                            <tr>
+                                <td class="auto-style1">
+                                    <asp:Label ID="lblempid3" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee ID"></asp:Label>
+                                </td>
+                                <td class="auto-style1">
+                                    <asp:TextBox ID="txtbxempid3" runat="server" Height="30px" Width="230px"></asp:TextBox>
+                                </td>
+                                <td class="auto-style1"></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style5"></td>
+                                <td class="auto-style5">
+                                <asp:RequiredFieldValidator ID="rfvupdatedesign2" runat="server" ControlToValidate="txtbxempid3" ErrorMessage="*Enter the employee id" ForeColor="#999999" ValidationGroup="update-form"></asp:RequiredFieldValidator>
+                                </td>
+                                <td class="auto-style5"></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <asp:Label ID="lblempname2" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee Name"></asp:Label>
+                                </td>
+                                <td class="auto-style1">
+                                    <asp:TextBox ID="txtbxempname2" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
+                                </td>
+                                <td class="auto-style1"></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style5"></td>
+                                <td class="auto-style5">
+                                <asp:RequiredFieldValidator ID="rfvupdatedesign1" runat="server" ControlToValidate="txtbxempname2" ErrorMessage="*Enter the employee name" ForeColor="#999999" ValidationGroup="update-form"></asp:RequiredFieldValidator>
+                                </td>
+                                <td class="auto-style5"></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style2">
+                                    <asp:Label ID="lblempgender2" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee Gender"></asp:Label>
+                                </td>
+                                <td class="auto-style2">
+                                    <asp:RadioButton ID="rbtmale2" runat="server" ForeColor="Lime" OnCheckedChanged="rbtmale2_CheckedChanged" Text="Male" />
+&nbsp;&nbsp;&nbsp;
+                                    <asp:RadioButton ID="rbtfemale2" runat="server" ForeColor="Lime" OnCheckedChanged="rbtfemale2_CheckedChanged" Text="Female" />
+&nbsp;&nbsp;
+                                    <asp:RadioButton ID="rbtothers2" runat="server" ForeColor="Lime" OnCheckedChanged="rbtothers2_CheckedChanged" Text="Others" />
+                                    &nbsp;
+                                </td>
+                                <td class="auto-style2"></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <asp:Label ID="lblempage2" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee Age"></asp:Label>
+                                </td>
+                                <td class="auto-style1">
+                                    <asp:TextBox ID="txtbxempage2" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
+                                </td>
+                                <td class="auto-style1"></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>
+                                <asp:RequiredFieldValidator ID="rfvupdatedesign0" runat="server" ControlToValidate="txtbxempdesign2" ErrorMessage="*Enter the employee designation" ForeColor="#999999" ValidationGroup="update-form"></asp:RequiredFieldValidator>
+                                    <br />
+                                    <asp:RangeValidator ID="rvupdateage" runat="server" ErrorMessage="Age must be above 18 and below 59" ForeColor="#999999" ControlToValidate="txtbxempage2" MaximumValue="59" MinimumValue="18" ValidationGroup="insert-form"></asp:RangeValidator>
+                                    <br />
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <asp:Label ID="lblempdesign2" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee Designation"></asp:Label>
+                                </td>
+                                <td class="auto-style1">
+                                    <asp:TextBox ID="txtbxempdesign2" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
+                                </td>
+                                <td class="auto-style1"></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style5"></td>
+                                <td class="auto-style5">
+                                <asp:RequiredFieldValidator ID="rfvupdatedesign" runat="server" ControlToValidate="txtbxempdesign2" ErrorMessage="*Enter the employee designation" ForeColor="#999999" ValidationGroup="update-form"></asp:RequiredFieldValidator>
+                                </td>
+                                <td class="auto-style5"></td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <asp:Label ID="lblempdoj2" runat="server" font-size="16px" Font-Bold="True" ForeColor="Lime" Text="Employee Date of Joining"></asp:Label>
+                                </td>
+                                <td class="auto-style1">
+                                    <asp:TextBox ID="txtbxempdoj2" runat="server" ValidationGroup="form" TextMode="Date" Height="30px" Width="230px"></asp:TextBox>
+                                </td>
+                                <td class="auto-style1"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;</td>
+                                <td>
+                                <asp:RequiredFieldValidator ID="rfvupdatedoj" runat="server" ControlToValidate="txtbxempdoj2" ErrorMessage="*Enter the employee date of joining" ForeColor="#999999" ValidationGroup="update-form"></asp:RequiredFieldValidator>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>
+                                    <asp:ValidationSummary ID="vsupdateform" runat="server" ShowMessageBox="True" ShowSummary="False" ValidationGroup="update-form" ForeColor="#1B2D20" />
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                           
+                        </table>
+                    </div>
+                <div class="updatefield">
+                    <div>
+                         
+                    <table style="width:80%;">
+                        <tr>
+                            <td class="auto-style8">
+                                <asp:Label ID="lblempleeid4" runat="server" font-size="16px" Font-Bold="True" ForeColor="Lime" Text="Employee ID"></asp:Label>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:TextBox ID="txtbxempid4" runat="server" Height="30px" Width="251px"></asp:TextBox>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:Button ID="btupdate" runat="server" ForeColor="Lime" Font-Bold="true" Height="35px" Text="Update" Width="90px" OnClick="btupdate_Click" ValidationGroup="update-form" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style9">
+                                    &nbsp;</td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtbxempid4" ErrorMessage="*Enter the employee ID" ForeColor="#999999" ValidationGroup="update-form"></asp:RequiredFieldValidator>
+                                <br />
+                            </td>
+                            <td>
+                                &nbsp;</td>
+                            
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </article>
     </section>
        <%--    Delete form section --%>
     <section id="delete" class="delete">

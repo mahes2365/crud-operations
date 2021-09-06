@@ -117,4 +117,59 @@ public partial class home : System.Web.UI.Page
             lbldeletemsg.Text = "There is no record in this ID";
         }
     }
+    protected void rbtmale2_CheckedChanged(object sender, EventArgs e)
+    {
+        sex = rbtmale2.Text;
+    }
+
+    protected void rbtfemale2_CheckedChanged(object sender, EventArgs e)
+    {
+        sex = rbtfemale2.Text;
+
+    }
+
+    protected void rbtothers2_CheckedChanged(object sender, EventArgs e)
+    {
+        sex = rbtothers2.Text;
+
+    }
+    protected void btupdate_Click(object sender, EventArgs e)
+    {
+        string empid2 = txtbxempid4.Text;
+        empid = txtbxempid3.Text;
+        empname = txtbxempname2.Text;
+        age = txtbxempage2.Text;
+        designation = txtbxempdesign2.Text;
+        doj = txtbxempdoj2.Text;
+        bool value = obj.getData("select * from temp_emp_data where emp_id='" + empid + "'");
+
+        if (value)
+        {
+            Response.Write("<script>alert('Invalid ID')</script>");
+            txtbxempname2.Text = "";
+            txtbxempid3.Text = "";
+            txtbxempdesign2.Text = "";
+            txtbxempdoj2.Text = "";
+            txtbxempage2.Text = "";
+            rbtfemale2.Checked = false;
+            rbtmale2.Checked = false;
+            rbtothers2.Checked = false;
+        }
+        else
+        {
+            obj.DML("update temp_emp_data set emp_id='" + empid + "',emp_name='" + empname + "',emp_gender='" + sex + "',emp_age=" + age + ",emp_designation='" + designation + "',emp_doj='" + doj + "' where emp_id='" + empid2 + "'");
+            Response.Write("<script>alert('The Employee Data Updated Successfully')</script>");
+            txtbxempname2.Text = "";
+            txtbxempid3.Text = "";
+            txtbxempdesign2.Text = "";
+            txtbxempdoj2.Text = "";
+            txtbxempage2.Text = "";
+            rbtfemale2.Checked = false;
+            rbtmale2.Checked = false;
+            rbtothers2.Checked = false;
+        }
+        //obj.update("Update temp_emp_data set emp_name=@emp_name,emp_gender=@emp_gender,emp_age=@emp_age,emp_designation=@emp_designation,emp_doj=@emp_doj where emp_id=@emp_id", empname, sex, age, designation, doj, empid2);
+    }
+
+    
 }
