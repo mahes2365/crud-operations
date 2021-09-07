@@ -11,4 +11,16 @@
     $(".delete-img").hover(function () {
         $(".text4").slideToggle(500);
     });
+    $("#a1").click(function () {
+        $("#GridView1").hide();
+    });
+    $("#a2").click(function () {
+        $("#GridView1").hide();
+    });
+    $("#a4").click(function () {
+        $("#GridView1").hide();
+    });
+    $("#a5").click(function () {
+        $("#GridView1").hide();
+    });
 });

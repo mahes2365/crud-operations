@@ -45,15 +45,15 @@
        <%--    Home section --%>
     <section id="home" class="home">
         <aside class="nav">
-            <nav><a href="#home">Home</a></nav>
-            <nav><a href="#insert">Insertion</a></nav>
-            <nav><a href="#select">Selection</a></nav>
-            <nav><a href="#update">Updation</a></nav>
-            <nav><a href="#delete">Deletion</a></nav>
+            <nav><a id="a1" href="#home">Home</a></nav>
+            <nav><a id="a2" href="#insert">Insertion</a></nav>
+            <nav><a id="a3" href="#select">Selection</a></nav>
+            <nav><a id="a4" href="#update">Updation</a></nav>
+            <nav><a id="a5" href="#delete">Deletion</a></nav>
         </aside>
         <article class="home-content">
             <section class="img-container">
-                <img src="images/welcome.svg" alt="welcomeimg"  />
+                <img src="images/welcomeimg.svg" alt="welcomeimg"  />
             </section>
             <section class="content-container">
                 <article>
@@ -63,7 +63,7 @@
                 <section class="thumb-img">
                    <div class="insert-img"><img src="images/insert.svg" alt="insertimg"/><p class="text1">Insert</p></div>
                    <div class="select-img"><img src="images/select.svg" alt="selectimg"/><p class="text2">Select</p></div>
-                   <div class="update-img"><img src="images/update.svg" alt="updateimg"/><p class="text3">Update</p></div>
+                   <div class="update-img"><img src="images/updateimg.svg" alt="updateimg"/><p class="text3">Update</p></div>
                    <div class="delete-img"><img src="images/delete.svg" alt="deleteimg"/><p class="text4">Delete</p></div>
                 </section>
             </section>
@@ -79,7 +79,7 @@
                          
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempid" font-size="16px" Font-Bold="true" runat="server" ForeColor="Lime" Text="Employee ID"></asp:Label>
+                                    <asp:Label ID="lblempid" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee ID"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempid" runat="server" Height="30px" Width="230px"></asp:TextBox>
@@ -95,7 +95,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempname" font-size="16px" Font-Bold="true" runat="server" ForeColor="Lime" Text="Employee Name"></asp:Label>
+                                    <asp:Label ID="lblempname" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee Name"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempname" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
@@ -111,14 +111,14 @@
                             </tr>
                             <tr>
                                 <td class="auto-style2">
-                                    <asp:Label ID="lblempgender" font-size="16px" Font-Bold="true" runat="server" ForeColor="Lime" Text="Employee Gender"></asp:Label>
+                                    <asp:Label ID="lblempgender" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee Gender"></asp:Label>
                                 </td>
                                 <td class="auto-style2">
-                                    <asp:RadioButton ID="rbtmale" runat="server" ForeColor="Lime" GroupName="gender" Text="Male" ValidationGroup="form" OnCheckedChanged="rbtmale_CheckedChanged" />
+                                    <asp:RadioButton ID="rbtmale" runat="server" ForeColor="#D1001C" GroupName="gender" Text="Male" ValidationGroup="form" OnCheckedChanged="rbtmale_CheckedChanged" />
                                     &nbsp;&nbsp;
-                                    <asp:RadioButton ID="rbtfemale" runat="server" ForeColor="Lime" GroupName="gender" Text="Female" OnCheckedChanged="rbtfemale_CheckedChanged" />
+                                    <asp:RadioButton ID="rbtfemale" runat="server" ForeColor="#D1001C" GroupName="gender" Text="Female" OnCheckedChanged="rbtfemale_CheckedChanged" />
                                     &nbsp;&nbsp;
-                                    <asp:RadioButton ID="rbtothers" runat="server" ForeColor="Lime" GroupName="gender"  Text="Others" OnCheckedChanged="rbtothers_CheckedChanged" />
+                                    <asp:RadioButton ID="rbtothers" runat="server" ForeColor="#D1001C" GroupName="gender"  Text="Others" OnCheckedChanged="rbtothers_CheckedChanged" />
                                 </td>
                                 <td class="auto-style2"></td>
                             </tr>
@@ -129,7 +129,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempage" font-size="16px" Font-Bold="true" runat="server" ForeColor="Lime" Text="Employee Age"></asp:Label>
+                                    <asp:Label ID="lblempage" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee Age"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempage" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
@@ -147,7 +147,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempdesign" font-size="16px" Font-Bold="true" runat="server" ForeColor="Lime" Text="Employee Designation"></asp:Label>
+                                    <asp:Label ID="lblempdesign" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee Designation"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempdesign" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
@@ -163,7 +163,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempdoj" runat="server" font-size="16px" Font-Bold="true" ForeColor="Lime" Text="Employee Date of Joining"></asp:Label>
+                                    <asp:Label ID="lblempdoj" runat="server" font-size="16px" Font-Bold="True" ForeColor="#D1001C" Text="Employee Date of Joining"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempdoj" runat="server" ValidationGroup="form" TextMode="Date" Height="30px" Width="230px"></asp:TextBox>
@@ -186,7 +186,7 @@
                             </tr>
                             <tr>
                                 <td colspan="3" class="auto-style1">
-                               <center><asp:Button ID="btsubmit" runat="server"  Font-Bold="true" ForeColor="Lime" Text="Submit" ValidationGroup="insert-form" Height="35px" OnClick="btsubmit_Click" Width="90px" /></center>
+                               <center><asp:Button ID="btsubmit" runat="server"  Font-Bold="true" ForeColor="#D1001C" Text="Submit" ValidationGroup="insert-form" Height="35px" OnClick="btsubmit_Click" Width="90px" /></center>
                                 </td>
                             </tr>
                         </table>
@@ -207,14 +207,14 @@
                     <table style="width:80%;">
                         <tr>
                             <td class="auto-style6">
-                                <asp:Label ID="lblselectmsg" runat="server" ForeColor="Lime" Font-Bold="true" Text="(Particular Record)"></asp:Label>
-                                <asp:Label ID="lblempid2" runat="server" ForeColor="Lime" Font-Bold="true" Text="Employee ID"></asp:Label>
+                                <asp:Label ID="lblselectmsg" runat="server" ForeColor="#D1001C" Font-Bold="True" Text="(Particular Record)"></asp:Label>
+                                <asp:Label ID="lblempid2" runat="server" ForeColor="#D1001C" Font-Bold="True" Text="Employee ID"></asp:Label>
                             </td>
                             <td class="auto-style7">
                                 <asp:TextBox ID="txtbxempid2" runat="server" Height="30px" Width="230px"></asp:TextBox>
                             </td>
                             <td class="auto-style1">
-                                <asp:Button ID="btselect" runat="server" ForeColor="Lime" Height="35px" Font-Bold="true" OnClick="btselect_Click" Text="Select" ValidationGroup="select-form" Width="90px" />
+                                <asp:Button ID="btselect" runat="server" ForeColor="#D1001C" Height="35px" Font-Bold="true" OnClick="btselect_Click" Text="Select" ValidationGroup="select-form" Width="90px" />
                             </td>
                         </tr>
                         <tr>
@@ -228,13 +228,13 @@
                         </tr>
                         <tr>
                             <td class="auto-style3">
-                                <asp:Label ID="lblviewall" runat="server" Text="Veiw All Record" font-size="17px" Font-Bold="true" ForeColor="Lime"></asp:Label>
+                                <asp:Label ID="lblviewall" runat="server" Text="Veiw All Record" font-size="17px" Font-Bold="True" ForeColor="#D1001C"></asp:Label>
                                 </td>
                             <td class="auto-style4">
-                                <asp:Label ID="lblselectmsg1" runat="server" ForeColor="Lime"></asp:Label>
+                                <asp:Label ID="lblselectmsg1" runat="server" ForeColor="#D1001C"></asp:Label>
                             </td>
                             <td>
-                                <asp:Button ID="btselectall" runat="server" ForeColor="Lime" Height="35px" Font-Bold="true" OnClick="btselectall_Click" Text="View all" Width="90px" />
+                                <asp:Button ID="btselectall" runat="server" ForeColor="#D1001C" Height="35px" Font-Bold="true" OnClick="btselectall_Click" Text="View all" Width="90px" />
                             </td>
                         </tr>
                     </table>
@@ -278,7 +278,7 @@
                         <table style="width:80%;">
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempid3" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee ID"></asp:Label>
+                                    <asp:Label ID="lblempid3" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee ID"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempid3" runat="server" Height="30px" Width="230px"></asp:TextBox>
@@ -294,7 +294,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempname2" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee Name"></asp:Label>
+                                    <asp:Label ID="lblempname2" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee Name"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempname2" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
@@ -310,14 +310,14 @@
                             </tr>
                             <tr>
                                 <td class="auto-style2">
-                                    <asp:Label ID="lblempgender2" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee Gender"></asp:Label>
+                                    <asp:Label ID="lblempgender2" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee Gender"></asp:Label>
                                 </td>
                                 <td class="auto-style2">
-                                    <asp:RadioButton ID="rbtmale2" runat="server" ForeColor="Lime" OnCheckedChanged="rbtmale2_CheckedChanged" Text="Male" />
+                                    <asp:RadioButton ID="rbtmale2" runat="server" ForeColor="#D1001C" OnCheckedChanged="rbtmale2_CheckedChanged" Text="Male" />
 &nbsp;&nbsp;&nbsp;
-                                    <asp:RadioButton ID="rbtfemale2" runat="server" ForeColor="Lime" OnCheckedChanged="rbtfemale2_CheckedChanged" Text="Female" />
+                                    <asp:RadioButton ID="rbtfemale2" runat="server" ForeColor="#D1001C" OnCheckedChanged="rbtfemale2_CheckedChanged" Text="Female" />
 &nbsp;&nbsp;
-                                    <asp:RadioButton ID="rbtothers2" runat="server" ForeColor="Lime" OnCheckedChanged="rbtothers2_CheckedChanged" Text="Others" />
+                                    <asp:RadioButton ID="rbtothers2" runat="server" ForeColor="#D1001C" OnCheckedChanged="rbtothers2_CheckedChanged" Text="Others" />
                                     &nbsp;
                                 </td>
                                 <td class="auto-style2"></td>
@@ -329,7 +329,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempage2" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee Age"></asp:Label>
+                                    <asp:Label ID="lblempage2" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee Age"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempage2" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
@@ -348,7 +348,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempdesign2" font-size="16px" Font-Bold="True" runat="server" ForeColor="Lime" Text="Employee Designation"></asp:Label>
+                                    <asp:Label ID="lblempdesign2" font-size="16px" Font-Bold="True" runat="server" ForeColor="#D1001C" Text="Employee Designation"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempdesign2" runat="server" ValidationGroup="form" Height="30px" Width="230px"></asp:TextBox>
@@ -364,7 +364,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style1">
-                                    <asp:Label ID="lblempdoj2" runat="server" font-size="16px" Font-Bold="True" ForeColor="Lime" Text="Employee Date of Joining"></asp:Label>
+                                    <asp:Label ID="lblempdoj2" runat="server" font-size="16px" Font-Bold="True" ForeColor="#D1001C" Text="Employee Date of Joining"></asp:Label>
                                 </td>
                                 <td class="auto-style1">
                                     <asp:TextBox ID="txtbxempdoj2" runat="server" ValidationGroup="form" TextMode="Date" Height="30px" Width="230px"></asp:TextBox>
@@ -395,13 +395,13 @@
                     <table style="width:80%;">
                         <tr>
                             <td class="auto-style8">
-                                <asp:Label ID="lblempleeid4" runat="server" font-size="16px" Font-Bold="True" ForeColor="Lime" Text="Employee ID"></asp:Label>
+                                <asp:Label ID="lblempleeid4" runat="server" font-size="16px" Font-Bold="True" ForeColor="#D1001C" Text="Employee ID"></asp:Label>
                             </td>
                             <td class="auto-style1">
                                 <asp:TextBox ID="txtbxempid4" runat="server" Height="30px" Width="251px"></asp:TextBox>
                             </td>
                             <td class="auto-style1">
-                                <asp:Button ID="btupdate" runat="server" ForeColor="Lime" Font-Bold="true" Height="35px" Text="Update" Width="90px" OnClick="btupdate_Click" ValidationGroup="update-form" />
+                                <asp:Button ID="btupdate" runat="server" ForeColor="#D1001C" Font-Bold="true" Height="35px" Text="Update" Width="90px" OnClick="btupdate_Click" ValidationGroup="update-form" />
                             </td>
                         </tr>
                         <tr>
@@ -431,13 +431,13 @@
                     <table style="width:80%;">
                         <tr>
                             <td class="auto-style1">
-                                <asp:Label ID="lblempid4" runat="server" font-size="16px" Font-Bold="True" ForeColor="Lime" Text="Employee ID"></asp:Label>
+                                <asp:Label ID="lblempid4" runat="server" font-size="16px" Font-Bold="True" ForeColor="#D1001C" Text="Employee ID"></asp:Label>
                             </td>
                             <td class="auto-style1">
                                 <asp:TextBox ID="txtbxempid5" runat="server" Height="30px" Width="230px"></asp:TextBox>
                             </td>
                             <td class="auto-style1">
-                                <asp:Button ID="btdelete" runat="server" Font-Bold="True" ForeColor="Lime" Text="Remove" OnClick="btdelete_Click" Height="35px" Width="90px" ValidationGroup="delete-form" />
+                                <asp:Button ID="btdelete" runat="server" Font-Bold="True" ForeColor="#D1001C" Text="Remove" OnClick="btdelete_Click" Height="35px" Width="90px" ValidationGroup="delete-form" />
                             </td>
                         </tr>
                         <tr>
@@ -447,7 +447,7 @@
                             <td>
                                 <asp:RequiredFieldValidator ID="rfvempid5" runat="server" ControlToValidate="txtbxempid5" ErrorMessage="*Enter the employee ID" ForeColor="#999999" ValidationGroup="delete-form"></asp:RequiredFieldValidator>
                                 <br />
-                                <asp:Label ID="lbldeletemsg" runat="server" font-size="16px" Font-Bold="True" ForeColor="Lime"></asp:Label>
+                                <asp:Label ID="lbldeletemsg" runat="server" font-size="16px" Font-Bold="True" ForeColor="#D1001C"></asp:Label>
                             </td>
                             <td>
                                 &nbsp;</td>
@@ -462,7 +462,7 @@
     </section>
   </form>
 </body>
-    <script src="home.js">
+    <script src="Home.js">
     
     </script>
 </html>
