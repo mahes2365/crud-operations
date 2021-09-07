@@ -19,7 +19,7 @@ public partial class home : System.Web.UI.Page
     query obj = new query();
     protected void Page_Load(object sender, EventArgs e)
     {
-     
+        
     }
     protected void rbtmale_CheckedChanged(object sender, EventArgs e)
     {
@@ -42,7 +42,8 @@ public partial class home : System.Web.UI.Page
         age = txtbxempage.Text;
         designation = txtbxempdesign.Text;
         doj = txtbxempdoj.Text;
-        bool value = obj.getData(empid);      
+        bool value = obj.getData("select * from temp_emp_data where emp_id='" + empid + "'");
+      
             if (value)
             {
                 Response.Write("<script>alert('The Employee ID already Exist')</script>");
@@ -57,7 +58,7 @@ public partial class home : System.Web.UI.Page
             }
             else
             {
-                obj.insert(empid,empname,sex,age,designation,doj);
+                obj.DML("insert into temp_emp_data values('" + empid + "','" + empname + "','" + sex + "'," + age + ",'" + designation + "','" + doj + "')");
                 Response.Write("<script>alert('The Employee Data Inserted Successfully')</script>");
                 txtbxempname.Text = "";
                 txtbxempid.Text = "";
@@ -76,10 +77,10 @@ public partial class home : System.Web.UI.Page
     protected void btselect_Click(object sender, EventArgs e)
     {
         empid = txtbxempid2.Text;
-        bool value = obj.getData(empid);
+        bool value = obj.getData("select * from temp_emp_data where emp_id='" + empid + "'");
         if (value)
         {
-            DataSet ds = obj.showData(empid);
+            DataSet ds = obj.showData("select * from temp_emp_data where emp_id='" + empid + "'");
             GridView1.DataSource = ds.Tables[0];
             GridView1.DataBind();
             lblselectmsg1.Text = "The record shown below";
@@ -95,13 +96,13 @@ public partial class home : System.Web.UI.Page
 
     protected void btselectall_Click(object sender, EventArgs e)
     {
-
-        BindData();
+        
+          BindData();
         
     }
     protected void BindData()
     {
-        DataSet ds = obj.showDataAll();
+        DataSet ds = obj.showData("select * from temp_emp_data");
         GridView1.DataSource = ds;
         GridView1.DataBind();
     }
@@ -113,10 +114,10 @@ public partial class home : System.Web.UI.Page
     protected void btdelete_Click(object sender, EventArgs e)
     {
         empid = txtbxempid5.Text;
-        bool value = obj.getData(empid);
+        bool value = obj.getData("select * from temp_emp_data where emp_id='" + empid + "'");
         if (value)
         {
-            obj.delete(empid);
+            obj.DML("delete from temp_emp_data where emp_id='" + empid + "'");
             txtbxempid5.Text = "";
             lbldeletemsg.Text="The Employee Data Deleted Successfully";
         }
@@ -150,11 +151,11 @@ public partial class home : System.Web.UI.Page
         age = txtbxempage2.Text;
         designation = txtbxempdesign2.Text;
         doj = txtbxempdoj2.Text;
-        bool value = obj.getData(empid2);
+        bool value = obj.getData("select * from temp_emp_data where emp_id='" + empid + "'");
 
         if (value)
         {
-            obj.update(empid2,empid, empname, sex, age, designation, doj);
+            obj.DML("update temp_emp_data set emp_id='" + empid + "',emp_name='" + empname + "',emp_gender='" + sex + "',emp_age=" + age + ",emp_designation='" + designation + "',emp_doj='" + doj + "' where emp_id='" + empid2 + "'");
             Response.Write("<script>alert('The Employee Data Updated Successfully')</script>");
             txtbxempname2.Text = "";
             txtbxempid3.Text = "";
